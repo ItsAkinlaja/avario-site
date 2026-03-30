@@ -2,25 +2,37 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e1e1e;
+
+  --avario-teal: #1e7f4f;
+  --avario-dark-teal: #145a3a;
+  --avario-teal-tint: #e6f4ed;
+  --avario-lime: #9edc2a;
+
+  --avario-gray-50: #f4f6f8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-avario-teal: var(--avario-teal);
+  --color-avario-dark-teal: var(--avario-dark-teal);
+  --color-avario-teal-tint: var(--avario-teal-tint);
+  --color-avario-lime: var(--avario-lime);
+  --color-avario-gray-50: var(--avario-gray-50);
+
+  --font-sans: var(--font-body);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  }
 }
