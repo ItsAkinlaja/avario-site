@@ -19,22 +19,56 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   applicationName: "Avario",
   title: {
-    default: "Avario",
-    template: "%s | Avario",
+    default: "Avario Digitals - Structured Growth Systems",
+    template: "%s | Avario Digitals",
   },
   description:
     "Avario Digitals designs and deploys structured systems that drive measurable business growth across acquisition, sales, operations, and infrastructure.",
+  metadataBase: new URL("https://avariodigitals.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Avario Digitals - Structured Growth Systems",
+    description:
+      "We build systems that deliver measurable growth. 150+ systems deployed. 15+ team members.",
+    url: "https://avariodigitals.com",
+    siteName: "Avario Digitals",
+    images: [
+      {
+        url: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
+        width: 1200,
+        height: 630,
+        alt: "Avario Digitals Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Avario Digitals - Structured Growth Systems",
+    description:
+      "We build systems that deliver measurable growth. 150+ systems deployed.",
+    images: [
+      "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
+    ],
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      {
-        url: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
     ],
-    apple: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
+  keywords: [
+    "growth systems",
+    "business growth",
+    "acquisition",
+    "sales infrastructure",
+    "operations",
+    "measurable outcomes",
+  ],
 };
 
 export default function RootLayout({
