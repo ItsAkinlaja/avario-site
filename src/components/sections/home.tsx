@@ -1,365 +1,80 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 
-export function HomeHero() {
-  return (
-    <section
-      className="relative isolate min-h-[620px] overflow-hidden bg-black sm:min-h-[680px] md:min-h-[720px]"
-      style={{
-        backgroundImage:
-          "linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 46%, rgba(0,0,0,0.15) 100%), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=80')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
-      <Container className="relative flex min-h-[620px] flex-col justify-between pb-10 pt-24 sm:min-h-[680px] sm:pb-14 sm:pt-32 md:min-h-[720px] md:pt-36">
-        <div className="w-full max-w-3xl rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-sm sm:p-10">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-white/80">
-            <span className="h-2 w-2 rounded-full bg-avario-lime" />
-            Growth Infrastructure Company
-          </div>
-          <h1 className="mt-5 font-heading text-3xl font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl sm:leading-tight">
-            We Build Digital Systems, That Drive Growth.
-          </h1>
-          <div className="mt-5 h-px w-16 bg-white/25" />
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">
-            Strategy, technology, and automation designed to scale serious
-            businesses with structure and measurable outcomes.
-          </p>
+const trustedLogos = [
+  "https://avariodigitals.com/wp-content/uploads/2022/10/prag-avario.png",
+  "https://avariodigitals.com/wp-content/uploads/2022/10/logos-d-1.png",
+  "https://avariodigitals.com/wp-content/uploads/2022/10/reliance-avario.png",
+  "https://avariodigitals.com/wp-content/uploads/2022/10/5.png",
+  "https://avariodigitals.com/wp-content/uploads/2022/10/4.png",
+  "https://avariodigitals.com/wp-content/uploads/2022/10/1.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/image-removebg-preview-10.png",
+  "https://avariodigitals.com/wp-content/uploads/elementor/thumbs/Parach-logo-r7hcbxfornv9lhbd2y8t0qhto0s6jpk5btvapwk73c.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/hD00wHDglwqou2lRfR29lgjtZzSvw1v8kThz10cw-1.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/Logo-Beejay.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/Funtaak-Diagnostics-Logo.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/hXtZxDLdNvg8_XwYSqGPhHSLUUvg6u7D8tixbqTCbjY_plaintext_638338363541017966.jpg",
+  "https://avariodigitals.com/wp-content/uploads/2023/10/Deelogo-1.png",
+  "https://avariodigitals.com/wp-content/uploads/2023/07/Physiofit-Logo-320-x-120-px-Brand-Colours-1.webp",
+  "https://avariodigitals.com/wp-content/uploads/2023/07/Goldridgelogo.webp",
+];
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              href="/contact"
-              className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-avario-teal px-5 py-3 text-sm font-medium text-white hover:bg-avario-dark-teal sm:w-fit"
-            >
-              Book a Strategy Call
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-avario-lime text-black">
-                <span aria-hidden>↗</span>
-              </span>
-            </Link>
-            <ButtonLink
-              href="/growth-systems"
-              className="w-full justify-center border-white/30 text-white hover:bg-white/10 hover:text-white sm:w-fit"
-              variant="secondary"
-            >
-              Explore Growth Systems <span className="text-avario-lime">→</span>
-            </ButtonLink>
-          </div>
-        </div>
-
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-white backdrop-blur">
-            <div className="text-[11px] font-semibold tracking-wide text-white/70">
-              TRUSTED PARTNER
-            </div>
-            <div className="mt-1 text-sm font-medium text-white/90">
-              Structured deployment, not scattered execution
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-white backdrop-blur">
-            <div className="text-[11px] font-semibold tracking-wide text-white/70">
-              GROWTH SYSTEMS
-            </div>
-            <div className="mt-1 text-sm font-medium text-white/90">
-              Acquisition, sales, operations, infrastructure
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-white backdrop-blur">
-            <div className="text-[11px] font-semibold tracking-wide text-white/70">
-              MEASURABLE OUTCOMES
-            </div>
-            <div className="mt-1 text-sm font-medium text-white/90">
-              Visibility, conversion, and scalable growth
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-export function HomeProblem() {
-  return (
-    <section className="bg-avario-gray-50">
-      <Container className="py-14 sm:py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="font-heading text-sm font-semibold text-avario-teal">
-            Problem
-          </div>
-          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-            Most businesses grow without structure.
-          </h2>
-          <p className="mt-4 text-base leading-7 text-black/70 sm:text-lg">
-            Leads are generated but not tracked. Sales lacks visibility. Operations
-            are disconnected. Growth becomes inconsistent.
-          </p>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-export function HomeSystem() {
-  return (
-    <section className="bg-white">
-      <Container className="py-14 sm:py-16">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div>
-            <div className="font-heading text-sm font-semibold text-avario-teal">
-              System
-            </div>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-              We design and deploy systems that align your entire growth engine.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-black/70 sm:text-lg">
-              Strategy, technology, and performance are integrated into one
-              structured operating model so every part of the business can be
-              measured and improved.
-            </p>
-            <div className="mt-6">
-              <ButtonLink href="/growth-systems" variant="secondary">
-                View Growth Systems
-              </ButtonLink>
-            </div>
-          </div>
-
-          <div className="grid gap-4">
-            <Card>
-              <div className="text-xs font-semibold text-black/60">
-                What we build
-              </div>
-              <div className="mt-2 text-sm font-medium text-black">
-                Structured acquisition, sales, operations, and infrastructure
-                systems.
-              </div>
-            </Card>
-            <Card>
-              <div className="text-xs font-semibold text-black/60">
-                How we work
-              </div>
-              <div className="mt-2 text-sm font-medium text-black">
-                Diagnose the problem, deploy the system, track the result.
-              </div>
-            </Card>
-            <Card className="border-avario-teal/30">
-              <div className="text-xs font-semibold text-black/60">
-                Core promise
-              </div>
-              <div className="mt-2 text-sm font-medium text-black">
-                We build systems that deliver measurable growth.
-              </div>
-            </Card>
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-export function HomeResult() {
-  return (
-    <section className="bg-white">
-      <Container className="pb-14 sm:pb-16">
-        <div className="rounded-3xl bg-avario-teal-tint p-10 sm:p-12">
-          <div className="font-heading text-sm font-semibold text-avario-teal">
-            Result
-          </div>
-          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-            Better visibility. Stronger conversion. Scalable growth.
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-black/70 sm:text-lg">
-            When your business runs on systems, growth is no longer guesswork. You
-            can see what works, improve what doesn’t, and scale with clarity.
-          </p>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-const systems = [
+const values = [
   {
-    title: "Acquisition Systems",
-    text: "Capture leads, qualify intent, and route opportunities automatically.",
-    href: "/growth-systems#acquisition",
+    title: "Structured Thinking",
+    description:
+      "We diagnose business problems systematically, then design integrated systems that solve them — not quick fixes.",
   },
   {
-    title: "Sales & CRM Systems",
-    text: "Create pipeline visibility, follow-ups, and reporting with RelaviCX.",
-    href: "/growth-systems#sales-crm",
+    title: "Measurable Results",
+    description:
+      "Every system we build is designed to drive concrete business outcomes — growth, efficiency, predictability.",
   },
   {
-    title: "Operations Systems",
-    text: "Standardize delivery and reduce operational bottlenecks with workflows.",
-    href: "/growth-systems#operations",
+    title: "Strategic Execution",
+    description:
+      "We combine deep strategy with flawless implementation, ensuring your systems work as designed from day one.",
   },
   {
-    title: "Infrastructure Systems",
-    text: "Ship reliable software and automation infrastructure that scales.",
-    href: "/growth-systems#infrastructure",
+    title: "Long-term Partnership",
+    description:
+      "We're invested in your success. We don't just build systems and leave — we optimize them continuously.",
   },
 ];
 
-export function HomeSystemsGrid() {
+export function HomeTrustedBy() {
+  const track = [...trustedLogos, ...trustedLogos];
   return (
-    <section className="bg-white">
-      <Container className="py-14 sm:py-16">
-        <div className="flex items-end justify-between gap-6">
+    <section className="border-y border-[#1C4B42]/20 bg-[#1C4B42]/5">
+      <Container className="py-10 sm:py-12">
+        <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr] md:items-center">
           <div>
-            <div className="font-heading text-sm font-semibold text-avario-teal">
-              Core Systems
+            <div className="font-heading text-sm font-semibold uppercase tracking-widest text-[#1C4B42]">
+              Trusted by Teams Building Seriously
             </div>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-              Systems that fix real growth problems.
-            </h2>
-          </div>
-          <Link
-            href="/growth-systems"
-            className="hidden items-center gap-2 text-sm font-semibold text-avario-teal hover:text-avario-dark-teal md:inline-flex"
-          >
-            All systems <span className="text-avario-lime">→</span>
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {systems.map((s) => (
-            <Link key={s.title} href={s.href} className="group">
-              <Card className="h-full transition-shadow group-hover:shadow-md">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="font-heading text-lg font-semibold text-black">
-                      {s.title}
-                    </div>
-                    <div className="mt-2 text-sm leading-6 text-black/70">
-                      {s.text}
-                    </div>
-                  </div>
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-avario-teal-tint text-avario-teal">
-                    <span className="text-avario-lime">→</span>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-const casePreviews = [
-  {
-    title: "Lead Capture → Pipeline Visibility",
-    slug: "lead-to-pipeline-visibility",
-    result:
-      "Unified acquisition + CRM flow to reduce lead leakage and improve follow-up speed.",
-  },
-  {
-    title: "Operations System → Delivery Consistency",
-    slug: "operations-delivery-consistency",
-    result: "Standardized workflows with automation for predictable execution.",
-  },
-  {
-    title: "Infrastructure → Scalable Launches",
-    slug: "infrastructure-scalable-launches",
-    result:
-      "Performance-first web and system architecture that scales with demand.",
-  },
-];
-
-export function HomeCasePreview() {
-  return (
-    <section className="bg-white">
-      <Container className="py-14 sm:py-16">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <div className="font-heading text-sm font-semibold text-avario-teal">
-              Proof
-            </div>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-              Outcomes, not outputs.
-            </h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-black/70">
-              Every case study follows a clear flow: challenge → system → result.
+            <p className="mt-2 max-w-sm text-sm leading-6 text-[#1C4B42]/80">
+              Growing businesses rely on Avario to build the systems that transform effort into results.
             </p>
           </div>
-          <Link
-            href="/case-studies"
-            className="hidden items-center gap-2 text-sm font-semibold text-avario-teal hover:text-avario-dark-teal md:inline-flex"
-          >
-            View all <span className="text-avario-lime">→</span>
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {casePreviews.map((c) => (
-            <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group">
-              <Card className="h-full transition-shadow group-hover:shadow-md">
-                <div className="font-heading text-lg font-semibold text-black">
-                  {c.title}
+          <div className="marquee-paused overflow-hidden">
+            <div className="marquee-track">
+              {track.map((src, i) => (
+                <div key={`${src}-${i}`} className="flex items-center">
+                  <Image
+                    src={src}
+                    alt={`Logo ${i + 1}`}
+                    width={180}
+                    height={56}
+                    unoptimized
+                    className="h-10 w-auto opacity-90 transition-opacity hover:opacity-100"
+                  />
                 </div>
-                <div className="mt-3 text-sm leading-6 text-black/70">
-                  {c.result}
-                </div>
-                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-avario-teal group-hover:text-avario-dark-teal">
-                  Read case <span className="text-avario-lime">→</span>
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-const steps = [
-  {
-    title: "Diagnose",
-    text: "Identify the bottleneck across acquisition, sales, or operations.",
-  },
-  {
-    title: "Design",
-    text: "Map the system and define how data, people, and tools should connect.",
-  },
-  {
-    title: "Deploy",
-    text: "Implement the infrastructure with clean, structured execution.",
-  },
-  {
-    title: "Optimize",
-    text: "Measure performance and improve continuously based on evidence.",
-  },
-];
-
-export function HomeHowWeWork() {
-  return (
-    <section className="bg-avario-gray-50">
-      <Container className="py-14 sm:py-16">
-        <div>
-          <div className="font-heading text-sm font-semibold text-avario-teal">
-            How We Work
+              ))}
+            </div>
           </div>
-          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-black sm:text-4xl">
-            Clear process. Structured delivery.
-          </h2>
-        </div>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-4">
-          {steps.map((s, idx) => (
-            <Card key={s.title} className="bg-white">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-avario-teal-tint font-heading text-sm font-semibold text-avario-teal">
-                {idx + 1}
-              </div>
-              <div className="mt-4 font-heading text-lg font-semibold text-black">
-                {s.title}
-              </div>
-              <div className="mt-2 text-sm leading-6 text-black/70">{s.text}</div>
-            </Card>
-          ))}
         </div>
       </Container>
     </section>
@@ -368,32 +83,234 @@ export function HomeHowWeWork() {
 
 export function HomeCTA() {
   return (
-    <section className="bg-avario-dark-teal">
-      <Container className="py-14 sm:py-16">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>
-            <div className="font-heading text-sm font-semibold text-white/80">
-              Next Step
-            </div>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Request a consultation and get a clear system roadmap.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-white/80">
-              If you’re serious about measurable growth, we’ll help you identify the
-              bottleneck, define the system, and plan the deployment.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-            <ButtonLink href="/contact" className="bg-white text-avario-dark-teal hover:bg-white/90">
-              Request Consultation
-            </ButtonLink>
-            <ButtonLink
-              href="/growth-systems"
-              variant="secondary"
-              className="border-white/60 text-white hover:bg-white/10"
+    <section className="bg-white">
+      <Container className="py-16 sm:py-20">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d3e2d] to-[#0d2419] px-8 py-12 text-white sm:px-12 sm:py-16 lg:px-16">
+          <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+            <Reveal className="max-w-2xl">
+              <div className="font-heading text-sm font-semibold uppercase tracking-widest text-[#b4d400]">
+                Let&apos;s Build Your Growth System
+              </div>
+              <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                Tell us about your business — we&apos;ll help you <span className="text-[#b4d400]">build the right system</span>
+              </h2>
+              <p className="mt-5 text-base leading-7 text-white/80 sm:text-lg">
+                From customer acquisition to operations and infrastructure — we&apos;re designing and deploying the systems that drive measurable growth.
+              </p>
+            </Reveal>
+
+            <Reveal
+              delayMs={120}
+              className="flex flex-col gap-4 sm:flex-row lg:flex-col"
             >
-              Explore Systems
+              <ButtonLink
+                href="/contact"
+                variant="primary"
+                size="lg"
+                icon="arrow"
+                className="bg-[#b4d400] text-[#0d3e2d] hover:bg-white"
+              >
+                Request Consultation
+              </ButtonLink>
+              <ButtonLink
+                href="/case-studies"
+                variant="secondary"
+                size="lg"
+                className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
+              >
+                View Case Studies
+              </ButtonLink>
+            </Reveal>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function HomeValues() {
+  return (
+    <section className="bg-white py-20 sm:py-28">
+      <Container>
+        {/* Header */}
+        <Reveal className="flex flex-col items-center mb-16 lg:mb-20">
+          <div className="inline-flex items-center rounded-full border border-[#1C4B42]/20 bg-[#1C4B42]/5 px-4 py-2 mb-8">
+            <span className="text-xs font-semibold text-[#1C4B42] uppercase tracking-wider">
+              OUR VALUES
+            </span>
+          </div>
+          
+          <h2 className="max-w-4xl text-center font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#0d3e2d]">
+            How We <span className="text-[#9EDC2A]">Build Systems</span> That Work
+          </h2>
+        </Reveal>
+
+        {/* Values Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          {values.map((value, index) => (
+            <Reveal key={value.title} delayMs={80 + index * 80}>
+              <div className="flex flex-col items-center text-center">
+                {/* Circle Icon */}
+                <div className="mb-6 flex h-20 w-20 items-center justify-center">
+                  <svg
+                    viewBox="0 0 100 100"
+                    className="h-full w-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {/* Left half - Teal filled */}
+                    <circle cx="50" cy="50" r="45" fill="#1C4B42" />
+                    
+                    {/* Right half - White outline */}
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#1C4B42" strokeWidth="3" />
+                    
+                    {/* Lime striped pattern */}
+                    <defs>
+                      <pattern
+                        id={`stripes-${index}`}
+                        x="0"
+                        y="0"
+                        width="8"
+                        height="8"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <line x1="0" y1="0" x2="8" y2="8" stroke="#9EDC2A" strokeWidth="2" />
+                      </pattern>
+                    </defs>
+                    
+                    {/* Striped overlay on right half */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      fill={`url(#stripes-${index})`}
+                      clipPath={`polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)`}
+                    />
+                  </svg>
+                </div>
+
+                {/* Card Content */}
+                <div className="rounded-2xl border border-[#1C4B42]/10 bg-[#1C4B42]/5 p-6 sm:p-7 hover:bg-[#B4E717] transition-colors">
+                  <h3 className="font-heading text-lg font-semibold text-[#1C4B42] mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-[#13251a]/70">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function HomeSubscribe() {
+  return (
+    <section className="relative bg-white py-16 sm:py-20">
+      <div className="relative overflow-hidden rounded-3xl bg-[#1C4B42]">
+        <div className="grid items-center gap-0 lg:grid-cols-2">
+          {/* Left Content */}
+          <Reveal className="relative z-10 px-8 py-12 sm:px-10 sm:py-16 lg:px-12">
+            <div className="flex items-start gap-3 mb-8">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#9EDC2A]/20 flex-shrink-0">
+                <svg className="w-5 h-5 text-[#9EDC2A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-white/70">Stay Informed</h3>
+            </div>
+
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">
+              Latest News & Resources
+            </h2>
+
+            <p className="text-lg text-white/80 mb-8 max-w-md">
+              Get insights on growth systems, strategies, and execution directly to your inbox.
+            </p>
+
+            {/* Subscribe Form */}
+            <form className="flex flex-col sm:flex-row gap-3 max-w-sm">
+              <input
+                type="email"
+                placeholder="Email"
+                className="flex-1 px-6 py-3 rounded-full bg-white text-[#1C4B42] placeholder-[#1C4B42]/50 focus:outline-none focus:ring-2 focus:ring-[#9EDC2A]"
+                required
+              />
+              <button
+                type="submit"
+                className="px-8 py-3 bg-[#9EDC2A] text-[#1C4B42] font-semibold rounded-full hover:bg-[#B4E717] transition-colors whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+
+            <p className="text-xs text-white/60 mt-4">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </Reveal>
+
+          {/* Right Image */}
+          <Reveal delayMs={120} className="relative h-96 lg:h-full overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
+              alt="Team collaboration"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+            {/* Dark overlay for image */}
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1C4B42]/30" />
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function HeroNext() {
+  return (
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://via.placeholder.com/1920x1080?text=Avario+Team+Meeting"
+          alt="Team meeting"
+          fill
+          className="object-cover object-center"
+          priority
+          unoptimized
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Content */}
+      <Container className="relative z-10">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-white mb-8">
+            Investing For Tomorrow,{" "}
+            <span className="text-[#b4d400]">Together</span>
+          </h1>
+
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <ButtonLink
+              href="/contact"
+              variant="primary"
+              size="lg"
+              icon="arrow"
+              className="bg-[#1C4B42] text-white hover:bg-[#0d3e2d]"
+            >
+              Let&apos;s get started
             </ButtonLink>
+
+            <Link
+              href="/contact"
+              className="text-white font-medium text-lg hover:text-[#b4d400] transition-colors"
+            >
+              Schedule a Call
+            </Link>
           </div>
         </div>
       </Container>

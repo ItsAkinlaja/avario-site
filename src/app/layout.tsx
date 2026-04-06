@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Work_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { BackToTop } from "@/components/ui/BackToTop";
 
-const inter = Inter({
+const workSans = Work_Sans({
   variable: "--font-body",
   subsets: ["latin"],
 });
@@ -16,12 +17,25 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  applicationName: "Avario",
   title: {
-    default: "Avario Digitals | Growth Systems & Technology Infrastructure",
-    template: "%s | Avario Digitals",
+    default: "Avario",
+    template: "%s | Avario",
   },
   description:
     "Avario Digitals designs and deploys structured systems that drive measurable business growth across acquisition, sales, operations, and infrastructure.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=1", sizes: "any" },
+      {
+        url: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
+    apple: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
+  },
 };
 
 export default function RootLayout({
@@ -32,12 +46,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable} h-full antialiased`}
+      className={`${workSans.variable} ${poppins.variable} h-full antialiased overflow-x-hidden`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

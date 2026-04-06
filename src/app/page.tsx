@@ -1,25 +1,23 @@
 import {
-  HomeCasePreview,
   HomeCTA,
-  HomeHero,
-  HomeHowWeWork,
-  HomeProblem,
-  HomeResult,
-  HomeSystem,
-  HomeSystemsGrid,
+  HomeTrustedBy,
+  HomeSubscribe,
+  HomeValues,
 } from "@/components/sections/home";
+import { HeroNext } from "@/components/sections/HeroNext";
+import { WhoWeAre } from "@/components/sections/WhoWeAre";
+import { Services } from "@/components/sections/Services";
 
 export default function Home() {
   return (
     <>
-      <HomeHero />
-      <HomeProblem />
-      <HomeSystem />
-      <HomeResult />
-      <HomeSystemsGrid />
-      <HomeCasePreview />
-      <HomeHowWeWork />
+      <HeroNext />
+      <WhoWeAre />
+      <HomeTrustedBy />
+      <HomeValues />
+      <Services />
       <HomeCTA />
+      <HomeSubscribe />
     </>
   );
 }
