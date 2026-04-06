@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=1", sizes: "any" },
       {
         url: "https://avariodigitals.com/wp-content/uploads/2022/11/Avario-DP.png",
         sizes: "192x192",

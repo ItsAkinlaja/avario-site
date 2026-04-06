@@ -194,34 +194,148 @@ export function Navbar({ className }: { className?: string }) {
           onClick={() => setDesktopOpen(false)}
         />
 
-        {/* Slide-in tray panel - Contact info only */}
+        {/* Slide-in tray panel - Contact info with circular images */}
         <div
           id={desktopMenuId}
           className={cn(
-            "fixed right-0 top-16 z-40 w-80 border-l border-black/10 bg-white shadow-lg transition-transform duration-300 ease-out",
+            "fixed right-0 top-16 z-40 h-[calc(100vh-64px)] w-96 border-l border-black/10 bg-white shadow-lg overflow-y-auto transition-transform duration-300 ease-out",
             desktopOpen ? "translate-x-0" : "translate-x-full",
           )}
         >
-          <div className="p-6 space-y-4">
-            {/* Contact Email */}
-            <div>
-              <p className="text-xs font-semibold text-black/50 uppercase tracking-wide mb-2">Email</p>
-              <a
-                href="mailto:info@avariodigitals.com"
-                className="text-sm font-medium text-avario-teal hover:text-avario-dark-teal break-all"
+          <div className="p-8 space-y-6">
+            {/* Close button */}
+            <button
+              onClick={() => setDesktopOpen(false)}
+              className="absolute top-6 right-6 h-8 w-8 rounded-full bg-white border border-black/10 flex items-center justify-center text-black/70 hover:text-black hover:bg-black/5 transition-all z-50"
+              aria-label="Close menu"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                info@avariodigitals.com
-              </a>
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+
+            {/* Circular Image Container - Team Arrangement */}
+            <div className="relative mx-auto h-64 w-64 flex items-center justify-center">
+              {/* Center image - main contact image */}
+              <div className="absolute inset-0 flex items-center justify-center z-0">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80"
+                  alt="Team collaboration"
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+
+              {/* Top left - rotated position */}
+              <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg z-10 -rotate-12">
+                <Image
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                  alt="Team member"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Top right - rotated position */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg z-10 rotate-12">
+                <Image
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
+                  alt="Team member"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Bottom left - rotated position */}
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg z-10 rotate-12">
+                <Image
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                  alt="Team member"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Bottom right - rotated position */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg z-10 -rotate-12">
+                <Image
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                  alt="Team member"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
-            {/* Contact Button */}
-            <Link
-              href="/contact"
-              className="inline-flex w-full items-center justify-center rounded-full bg-avario-teal px-5 py-3 text-sm font-medium text-white hover:bg-avario-dark-teal transition-colors"
-              onClick={() => setDesktopOpen(false)}
-            >
-              Get in Touch
-            </Link>
+            {/* Contact Information */}
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-[#1C4B42] mb-6">Contact us</h2>
+
+              {/* Address */}
+              <div className="mb-6">
+                <p className="text-sm text-black/80 font-medium">Lagos, Nigeria</p>
+                <p className="text-sm text-black/60">Lekki, Lagos State</p>
+              </div>
+
+              {/* Email */}
+              <div className="mb-4">
+                <a
+                  href="mailto:hello@avariodigitals.com"
+                  className="text-sm text-black/80 hover:text-[#1C4B42] transition-colors font-medium"
+                >
+                  hello@avariodigitals.com
+                </a>
+              </div>
+
+              {/* Phone */}
+              <div className="mb-8">
+                <a
+                  href="tel:+18552891111"
+                  className="text-sm text-black/80 hover:text-[#1C4B42] transition-colors font-medium"
+                >
+                  +1 (855) 289-1111
+                </a>
+              </div>
+
+              {/* CTA Button with circular accent */}
+              <div className="flex items-center justify-center gap-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#1C4B42] text-white font-semibold text-sm hover:bg-[#0d3e2d] transition-all"
+                  onClick={() => setDesktopOpen(false)}
+                >
+                  Get in Touch Today
+                </Link>
+                <button
+                  className="w-12 h-12 rounded-full bg-[#9EDC2A] text-[#1C4B42] flex items-center justify-center hover:bg-[#8ac41f] transition-all font-bold -ml-2 relative z-10"
+                  title="Get in touch"
+                  onClick={() => {
+                    setDesktopOpen(false);
+                    window.location.href = '/contact';
+                  }}
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
