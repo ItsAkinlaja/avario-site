@@ -10,6 +10,7 @@ export function WhoWeAre() {
   const [autoRotate, setAutoRotate] = useState(true);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const tabs = [
     {
@@ -29,12 +30,17 @@ export function WhoWeAre() {
     },
   ];
 
+  // Ensure component is mounted before running effects
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Get current tab description
   const currentDescription = tabs[activeTab]?.description || "";
 
-  // Typewriter effect - character by character
+  // Typewriter effect - only runs on client after mount
   useEffect(() => {
-    if (!currentDescription) return;
+    if (!mounted || !currentDescription) return;
 
     let charIndex = 0;
     setDisplayedText("");
@@ -51,18 +57,18 @@ export function WhoWeAre() {
     }, 15); // 15ms per character for smooth typing
 
     return () => clearInterval(typeInterval);
-  }, [activeTab, currentDescription]);
+  }, [activeTab, currentDescription, mounted]);
 
-  // Auto-rotate tabs every 4 seconds
+  // Auto-rotate tabs every 4 seconds - only after mount
   useEffect(() => {
-    if (!autoRotate) return;
+    if (!mounted || !autoRotate) return;
 
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % tabs.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [autoRotate, tabs.length]);
+  }, [autoRotate, tabs.length, mounted]);
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -161,8 +167,14 @@ export function WhoWeAre() {
                   {tabs[activeTab].title}
                 </h3>
                 <p className="typewriter-text text-base sm:text-lg text-[#0d3e2d]/80">
-                  {displayedText}
-                  {isTyping && <span className="typing-cursor"></span>}
+                  {mounted ? (
+                    <>
+                      {displayedText}
+                      {isTyping && <span className="typing-cursor"></span>}
+                    </>
+                  ) : (
+                    tabs[activeTab].description
+                  )}
                 </p>
               </div>
             </div>
