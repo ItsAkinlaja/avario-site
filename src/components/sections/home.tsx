@@ -85,14 +85,20 @@ export function HomeCTA() {
   return (
     <section className="bg-white">
       <Container className="py-16 sm:py-20">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d3e2d] to-[#0d2419] px-8 py-12 text-white sm:px-12 sm:py-16 lg:px-16">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1C4B42] to-[#9EDC2A]/80 px-8 py-12 text-white sm:px-12 sm:py-16 lg:px-16 shadow-xl">
+          <div className="absolute inset-0 pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              <ellipse cx="500" cy="250" rx="120" ry="40" fill="#9EDC2A" fillOpacity="0.13" />
+              <ellipse cx="100" cy="60" rx="80" ry="30" fill="#b4d400" fillOpacity="0.10" />
+            </svg>
+          </div>
           <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_auto]">
             <Reveal className="max-w-2xl">
-              <div className="font-heading text-sm font-semibold uppercase tracking-widest text-[#b4d400]">
+              <div className="font-heading text-sm font-semibold uppercase tracking-widest text-[#9EDC2A]">
                 Let&apos;s Build Your Growth System
               </div>
               <h2 className="mt-4 font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                Tell us about your business — we&apos;ll help you <span className="text-[#b4d400]">build the right system</span>
+                Tell us about your business — we&apos;ll help you <span className="text-[#9EDC2A]">build the right system</span>
               </h2>
               <p className="mt-5 text-base leading-7 text-white/80 sm:text-lg">
                 From customer acquisition to operations and infrastructure — we&apos;re designing and deploying the systems that drive measurable growth.
@@ -108,7 +114,7 @@ export function HomeCTA() {
                 variant="primary"
                 size="lg"
                 icon="arrow"
-                className="bg-[#b4d400] text-[#0d3e2d] hover:bg-white"
+                className="bg-[#9EDC2A] text-[#1C4B42] hover:bg-white hover:text-[#1C4B42] border-2 border-[#9EDC2A] font-bold shadow"
               >
                 Request Consultation
               </ButtonLink>
@@ -116,7 +122,7 @@ export function HomeCTA() {
                 href="/case-studies"
                 variant="secondary"
                 size="lg"
-                className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
+                className="border-[#9EDC2A] text-white hover:bg-[#9EDC2A]/10 hover:text-[#1C4B42] hover:border-[#9EDC2A] font-bold"
               >
                 View Case Studies
               </ButtonLink>
@@ -150,45 +156,50 @@ export function HomeValues() {
           {values.map((value, index) => (
             <Reveal key={value.title} delayMs={80 + index * 80}>
               <div className="flex flex-col items-center text-center">
-                {/* Circle Icon */}
+                {/* Custom Icon for each value */}
                 <div className="mb-6 flex h-20 w-20 items-center justify-center">
-                  <svg
-                    viewBox="0 0 100 100"
-                    className="h-full w-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {/* Left half - Teal filled */}
-                    <circle cx="50" cy="50" r="45" fill="#1C4B42" />
-                    
-                    {/* Right half - White outline */}
-                    <circle cx="50" cy="50" r="45" fill="none" stroke="#1C4B42" strokeWidth="3" />
-                    
-                    {/* Lime striped pattern */}
-                    <defs>
-                      <pattern
-                        id={`stripes-${index}`}
-                        x="0"
-                        y="0"
-                        width="8"
-                        height="8"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <line x1="0" y1="0" x2="8" y2="8" stroke="#9EDC2A" strokeWidth="2" />
-                      </pattern>
-                    </defs>
-                    
-                    {/* Striped overlay on right half */}
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="45"
-                      fill={`url(#stripes-${index})`}
-                      clipPath={`polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)`}
-                    />
-                  </svg>
+                  {index === 0 && (
+                    // Structured Thinking: Flowchart
+                    <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none" stroke="#1C4B42" strokeWidth="2.5">
+                      <rect x="8" y="8" width="16" height="16" rx="4" fill="#9EDC2A" />
+                      <rect x="40" y="8" width="16" height="16" rx="4" fill="#fff" stroke="#9EDC2A" />
+                      <rect x="24" y="40" width="16" height="16" rx="4" fill="#fff" stroke="#1C4B42" />
+                      <path d="M24 16h16" stroke="#1C4B42" />
+                      <path d="M16 24v16h16" stroke="#1C4B42" />
+                      <circle cx="16" cy="16" r="2" fill="#1C4B42" />
+                      <circle cx="48" cy="16" r="2" fill="#9EDC2A" />
+                      <circle cx="32" cy="48" r="2" fill="#1C4B42" />
+                    </svg>
+                  )}
+                  {index === 1 && (
+                    // Measurable Results: Bar Chart
+                    <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
+                      <rect x="12" y="36" width="8" height="16" rx="2" fill="#9EDC2A" />
+                      <rect x="28" y="24" width="8" height="28" rx="2" fill="#1C4B42" />
+                      <rect x="44" y="16" width="8" height="36" rx="2" fill="#b4d400" />
+                      <line x1="8" y1="54" x2="56" y2="54" stroke="#1C4B42" strokeWidth="2.5" />
+                    </svg>
+                  )}
+                  {index === 2 && (
+                    // Strategic Execution: Rocket
+                    <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
+                      <path d="M32 8c8 8 16 24 8 32s-24 0-32-8c8-8 24-16 32-8z" fill="#9EDC2A" stroke="#1C4B42" strokeWidth="2.5" />
+                      <circle cx="32" cy="32" r="6" fill="#fff" stroke="#1C4B42" strokeWidth="2" />
+                      <path d="M32 38v10" stroke="#1C4B42" strokeWidth="2.5" />
+                      <path d="M28 48l4-6 4 6" stroke="#1C4B42" strokeWidth="2.5" />
+                    </svg>
+                  )}
+                  {index === 3 && (
+                    // Long-term Partnership: Handshake
+                    <svg viewBox="0 0 64 64" className="h-16 w-16" fill="none">
+                      <rect x="10" y="34" width="16" height="8" rx="4" fill="#9EDC2A" />
+                      <rect x="38" y="34" width="16" height="8" rx="4" fill="#b4d400" />
+                      <path d="M26 38l6 6 6-6" stroke="#1C4B42" strokeWidth="2.5" />
+                      <path d="M16 38v-8a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8v8" stroke="#1C4B42" strokeWidth="2.5" fill="none" />
+                    </svg>
+                  )}
                 </div>
 
-                {/* Card Content */}
                 <div className="rounded-2xl border border-[#1C4B42]/10 bg-[#1C4B42]/5 p-6 sm:p-7 hover:bg-[#B4E717] transition-colors">
                   <h3 className="font-heading text-lg font-semibold text-[#1C4B42] mb-3">
                     {value.title}

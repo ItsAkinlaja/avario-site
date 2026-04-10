@@ -26,45 +26,24 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <section className="overflow-hidden bg-[#1C4B42] text-white">
-        <Container className="py-16 sm:py-20 lg:py-24">
-          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-            <Reveal className="max-w-3xl">
-              <div className="font-heading text-sm font-semibold uppercase tracking-[0.22em] text-[#9EDC2A]">
-                Case Studies
-              </div>
-              <h1 className="mt-4 font-heading text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[4.5rem]">
-                Proof: How systems change business performance.
+      {/* Hero Section - white, bold, pictorial */}
+      <section className="relative bg-white overflow-hidden border-b border-[#1C4B42]/10">
+        <Container className="py-24 sm:py-32">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div className="font-heading text-sm font-semibold uppercase tracking-[0.22em] text-[#1C4B42] mb-4">Case Studies</div>
+              <h1 className="font-heading text-5xl sm:text-6xl font-bold leading-tight text-[#0d3e2d] mb-6">
+                Proof: How <span className="text-[#9EDC2A]">systems</span> change business performance
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
+              <p className="text-lg text-[#0d3e2d]/80 mb-8 max-w-xl">
                 Each case study shows a real business challenge, the system Avario built to solve it, and the measurable outcome that followed.
               </p>
             </Reveal>
-
-            <Reveal delayMs={140}>
-              <div className="rounded-[2rem] border border-white/10 bg-white/10 p-7 backdrop-blur-sm shadow-[0_24px_60px_rgba(0,0,0,0.2)] sm:p-8">
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9EDC2A]">
-                  What the cases show
-                </div>
-                <div className="mt-4 space-y-4">
-                  {[
-                    "How Avario diagnoses bottlenecks clearly",
-                    "How systems are designed around real operations",
-                    "How better structure creates measurable business movement",
-                  ].map((item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-4 border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
-                    >
-                      <div className="font-heading text-2xl font-semibold text-white/24">
-                        0{index + 1}
-                      </div>
-                      <div className="pt-1 text-sm leading-7 text-white/80 sm:text-base">
-                        {item}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <Reveal delayMs={120} className="flex items-center justify-center">
+              <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#9EDC2A]/20 bg-[#f8f6f1] flex items-center justify-center">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" className="absolute -top-8 -left-8 opacity-30"><circle cx="60" cy="60" r="60" fill="#9EDC2A" /></svg>
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" className="absolute -bottom-8 -right-8 opacity-20"><circle cx="60" cy="60" r="60" fill="#1C4B42" /></svg>
+                <img src="/case-study-hero.png" alt="Case Study Visual" className="object-contain w-3/4 h-3/4 z-10" />
               </div>
             </Reveal>
           </div>
@@ -72,55 +51,37 @@ export default function CaseStudiesPage() {
       </section>
 
       {featured ? (
-        <section className="bg-[#f8f6f1]">
-          <Container className="py-16 sm:py-20">
+        <section className="bg-white border-b border-[#1C4B42]/10">
+          <Container className="py-20 sm:py-28">
             <Reveal>
               <Link href={`/case-studies/${featured.slug}`} className="group block">
-                <article className="overflow-hidden rounded-2xl border border-[#1C4B42]/10 bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <div className="grid gap-0 lg:grid-cols-[0.35fr_0.65fr]">
-                    <div className="border-b border-[#1C4B42]/10 bg-gradient-to-br from-[#1C4B42] to-[#0d3e2d] p-8 text-white sm:p-10 lg:border-b-0 lg:border-r">
-                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9EDC2A]">
-                        Featured case
-                      </div>
-                      <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/56">
-                        <span>{featured.industry ?? "Case Study"}</span>
-                        <span>Problem to outcome</span>
-                      </div>
-                      <h2 className="mt-4 font-heading text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                        {featured.title}
-                      </h2>
-
-                      <div className="mt-10">
-                        <div className="text-sm font-semibold text-[#9EDC2A]">
-                          Read full case
+                <article className="overflow-hidden rounded-3xl border-2 border-[#9EDC2A]/20 bg-white shadow-lg hover:shadow-2xl transition-shadow">
+                  <div className="grid gap-0 lg:grid-cols-[0.4fr_0.6fr]">
+                    <div className="border-b border-[#9EDC2A]/10 bg-gradient-to-br from-[#f8f6f1] to-[#e8f9d2] p-10 text-[#1C4B42] sm:p-12 lg:border-b-0 lg:border-r flex flex-col justify-between">
+                      <div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9EDC2A]">Featured case</div>
+                        <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#1C4B42]/60">
+                          <span>{featured.industry ?? "Case Study"}</span>
+                          <span>Problem to outcome</span>
                         </div>
+                        <h2 className="mt-4 font-heading text-3xl font-semibold tracking-tight text-[#1C4B42] sm:text-5xl">{featured.title}</h2>
+                      </div>
+                      <div className="mt-10">
+                        <div className="text-sm font-semibold text-[#9EDC2A] group-hover:underline">Read full case</div>
                       </div>
                     </div>
-
                     <div className="grid gap-px bg-[#f0ede7] sm:grid-cols-3">
                       <div className="bg-white p-8 sm:p-10">
-                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">
-                          Challenge
-                        </div>
-                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">
-                          {featured.challenge}
-                        </div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">Challenge</div>
+                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">{featured.challenge}</div>
                       </div>
                       <div className="bg-[#faf8f5] p-8 sm:p-10">
-                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">
-                          System
-                        </div>
-                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">
-                          {featured.system}
-                        </div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">System</div>
+                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">{featured.system}</div>
                       </div>
                       <div className="bg-[#f5f2ed] p-8 sm:p-10">
-                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">
-                          Result
-                        </div>
-                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">
-                          {featured.result}
-                        </div>
+                        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1C4B42]">Result</div>
+                        <div className="mt-4 text-sm leading-7 text-[#0d3e2d]/70 sm:text-base">{featured.result}</div>
                       </div>
                     </div>
                   </div>

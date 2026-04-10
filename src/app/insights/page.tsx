@@ -62,47 +62,24 @@ export default async function InsightsPage() {
 
   return (
     <>
-      <section className="overflow-hidden bg-[#1C4B42]">
-        <Container className="py-16 sm:py-20 lg:py-24">
-          <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
-            <Reveal className="max-w-3xl">
-              <div className="font-heading text-sm font-semibold uppercase tracking-[0.22em] text-[#9EDC2A]">
-                Journal
-              </div>
-              <h1 className="mt-4 font-heading text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]">
-                Avario thinking on systems, growth, and operational clarity.
+      {/* Hero Section - white, bold, pictorial */}
+      <section className="relative bg-white overflow-hidden border-b border-[#1C4B42]/10">
+        <Container className="py-24 sm:py-32">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <Reveal>
+              <div className="font-heading text-sm font-semibold uppercase tracking-[0.22em] text-[#1C4B42] mb-4">Journal</div>
+              <h1 className="font-heading text-5xl sm:text-6xl font-bold leading-tight text-[#0d3e2d] mb-6">
+                Avario thinking on <span className="text-[#9EDC2A]">systems</span>, growth, and operational clarity
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
-                This is where strategy becomes practical. The journal is built for
-                founders and teams who want clearer growth systems, stronger
-                execution, and better commercial decisions.
+              <p className="text-lg text-[#0d3e2d]/80 mb-8 max-w-xl">
+                This is where strategy becomes practical. The journal is built for founders and teams who want clearer growth systems, stronger execution, and better commercial decisions.
               </p>
             </Reveal>
-
-            <Reveal delayMs={140}>
-              <div className="rounded-[2rem] border border-white/10 bg-white/10 p-7 backdrop-blur-sm shadow-[0_24px_60px_rgba(0,0,0,0.2)] sm:p-8">
-                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9EDC2A]">
-                  What you will find here
-                </div>
-                <div className="mt-4 space-y-4">
-                  {[
-                    "Clear perspectives on growth systems",
-                    "Practical insight on sales, operations, and infrastructure",
-                    "Thoughtful writing designed for decision-makers",
-                  ].map((item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-4 border-b border-white/10 pb-4 last:border-b-0 last:pb-0"
-                    >
-                      <div className="font-heading text-2xl font-semibold text-white/24">
-                        0{index + 1}
-                      </div>
-                      <div className="pt-1 text-sm leading-7 text-white/80 sm:text-base">
-                        {item}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <Reveal delayMs={120} className="flex items-center justify-center">
+              <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#9EDC2A]/20 bg-[#f8f6f1] flex items-center justify-center">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" className="absolute -top-8 -left-8 opacity-30"><circle cx="60" cy="60" r="60" fill="#9EDC2A" /></svg>
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" className="absolute -bottom-8 -right-8 opacity-20"><circle cx="60" cy="60" r="60" fill="#1C4B42" /></svg>
+                <img src="/insights-hero.png" alt="Insights Visual" className="object-contain w-3/4 h-3/4 z-10" />
               </div>
             </Reveal>
           </div>
